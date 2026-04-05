@@ -1,14 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Contact</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.9;
+    }
+
+    /* Contact Info Cards */
+    .info {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin: 30px 0;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      width: 250px;
+      backdrop-filter: blur(10px);
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    /* Form */
+    form {
+      margin-top: 30px;
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    .btn {
+      background: white;
+      color: #333;
+      padding: 12px 25px;
+      border-radius: 25px;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+  </style>
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-  <h1>Contact Us 📞</h1>
 
-  <p>Email: shayan321.pramanik@gmail.com</p>
-  <p>Phone: +91-1111111111</p>
+<body>
 
-  <a href="/">Home</a>
+  <div class="container">
+    <h1><i class="fas fa-headset"></i> Contact Us</h1>
+    <p>Got questions, ideas, or just testing this form? Go ahead.</p>
+
+    <div class="info">
+      <div class="card">
+        <div class="icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <p>shayan321.pramanik@gmail.com</p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><i class="fas fa-phone"></i></div>
+        <h3>Phone</h3>
+        <p>+91-1111111111</p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Your Message..." required></textarea><br>
+      <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+
+    <a href="/" class="home-link"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+
 </body>
 </html>

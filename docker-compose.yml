@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  home:
+    build:
+      context: ./home       # folder containing Dockerfile for home
+      dockerfile: Dockerfile
+    container_name: home
+    ports:
+      - "81:80"
+    restart: always
+
+  dashboard:
+    build:
+      context: ./dashboard  # folder containing Dockerfile for dashboard
+      dockerfile: Dockerfile
+    container_name: dashboard
+    ports:
+      - "82:80"
+    restart: always
+
+  contact:
+    build:
+      context: ./contact    # folder containing Dockerfile for contact
+      dockerfile: Dockerfile
+    container_name: contact
+    ports:
+      - "83:80"
+    restart: always
+
+  content:
+    build:
+      context: ./content    # folder containing Dockerfile for content
+      dockerfile: Dockerfile
+    container_name: content
+    ports:
+      - "84:80"
+    restart: always

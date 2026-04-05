@@ -1,13 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Content</title>
+  <meta charset="UTF-8">
+  <title>Content Page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      margin: 30px auto;
+      padding: 25px;
+      border-radius: 15px;
+      width: 300px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      border-radius: 25px;
+      background: white;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+  </style>
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-  <h1>Content Page 📚</h1>
 
-  <p>This is your learning content section.</p>
+<body>
 
-  <a href="/">Home</a>
+  <div class="container">
+    <h1><i class="fas fa-book-open"></i> Content Page</h1>
+    <p>This is your learning content section. Try not to ignore it like most people ignore documentation.</p>
+
+    <div class="card">
+      <div class="icon"><i class="fas fa-code"></i></div>
+      <h3>DevOps Basics</h3>
+      <p>Learn Git, Docker, and AWS step by step.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fas fa-cloud"></i></div>
+      <h3>Cloud Learning</h3>
+      <p>Understand deployment and scaling like a civilized human.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fas fa-lock"></i></div>
+      <h3>Authentication</h3>
+      <p>Secure your app before someone else does it for you.</p>
+    </div>
+
+    <a href="/" class="btn"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
+
 </body>
-</html>
+</html>>

@@ -1,31 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Home</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      text-align: center;
-      color: white;
-    }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      background: black;
-      color: white;
-      cursor: pointer;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTK | ChaloTryKaree</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  color: #111;
+}
+
+/* BACKGROUND */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #a18cd1, #84fab0);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.glow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.6), transparent 60%);
+  z-index: -2;
+}
+
+.shape {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+}
+.shape:nth-child(2) { left: 10%; top: 70%; }
+.shape:nth-child(3) { right: 15%; top: 30%; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-80px); }
+  100% { transform: translateY(0); }
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+}
+nav a {
+  text-decoration: none;
+  font-family: 'Orbitron';
+  color: #333;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* SCROLL ANIMATION */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGE */
+img {
+  width: 120px;
+  border-radius: 50%;
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 25px;
+  border: none;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+
+/* PROJECT */
+.project {
+  background: rgba(255,255,255,0.6);
+}
+
+/* YOUTUBE */
+.yt-box {
+  border: 2px solid red;
+}
+</style>
 </head>
 <body>
 
-<h1>Welcome to My Fancy Website 🚀</h1>
+<div class="bg"></div>
+<div class="glow"></div>
+<div class="shape"></div>
+<div class="shape"></div>
 
-<button onclick="location.href='/dashboard'">Dashboard</button>
-<button onclick="location.href='/contact'">Contact Us</button>
-<button onclick="location.href='/content'">View Content</button>
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#youtube">YouTube</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hidden">
+  <h1>🚀 ChaloTryKaree (CTK)</h1>
+  <p>Fun | Explore | Build | Repeat 🔥</p>
+
+  <button class="btn" onclick="location.href='/dashboard'">Dashboard</button>
+  <button class="btn" onclick="location.href='/contact'">Contact</button>
+  <button class="btn" onclick="location.href='/content'">Content</button>
+</section>
+
+<!-- INTRO -->
+<section class="hidden">
+  <h1>🔥 What We Do</h1>
+  <p>
+    We explore technology, build projects, and create fun content through
+    our YouTube channel <b>ChaloTryKaree (CTK)</b>. From DevOps experiments
+    to creative ideas, we believe in learning by doing 🚀
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="hidden">
+<h1>👥 Meet The Team</h1>
+
+<div class="card">
+<img src="https://via.placeholder.com/150">
+<h2>Rajive Sharma</h2>
+<p><b>🚀 Cloud Associate Engineer</b></p>
+<p>
+Rajive Sharma is a passionate Cloud Associate Engineer with strong interest in DevOps,
+cloud infrastructure, and automation. He has hands-on experience with Docker, Nginx,
+and cloud deployments, focusing on building scalable and efficient applications.
+</p>
+
+<h3>🎓 Education</h3>
+<p>B.Sc (2020–2023)</p>
+<p>Diploma in Cloud & DevOps - Jetking (2023–2025)</p>
+
+<h3>🛠 Skills</h3>
+<p>Docker | AWS | Nginx | Jenkins | Linux | Git | Networking</p>
+
+<p>
+<a href="https://github.com/RajiveSharma771">GitHub</a> |
+<a href="https://www.linkedin.com/in/rajive-sharma-a4a730293/">LinkedIn</a>
+</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/150">
+<h2>Shayan Pramanik</h2>
+<p><b>⚙️ Jr DevOps Engineer</b></p>
+<p>
+Shayan Pramanik is an aspiring DevOps Engineer focused on automation,
+CI/CD pipelines, and containerization. He is continuously learning and
+building efficient deployment workflows with modern tools.
+</p>
+
+<h3>🎓 Education</h3>
+<p>B.Sc Computer Science (2020–2023)</p>
+<p>Diploma in Cloud Computing (Pursuing)</p>
+
+<h3>🛠 Skills</h3>
+<p>Docker | Jenkins | Linux | Git | CI/CD Basics</p>
+
+<p>
+<a href="https://github.com/ShayanPramanik">GitHub</a> |
+<a href="https://www.linkedin.com/in/shayan-pramanik-3476823a5/">LinkedIn</a>
+</p>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="hidden">
+<h2>🚀 Projects</h2>
+
+<div class="card project">
+<h3>Dockerized Nginx Website</h3>
+<p>Built and deployed a static website using Docker and Nginx with custom configuration. Focused on portability and easy deployment.</p>
+<a href="https://github.com/RajiveSharma771">🔗 GitHub</a>
+</div>
+
+<div class="card project">
+<h3>Nginx Reverse Proxy</h3>
+<p>Handled multiple containers with reverse proxy setup for scalable deployment.</p>
+<a href="https://github.com/RajiveSharma771">🔗 GitHub</a>
+</div>
+
+<div class="card project">
+<h3>Domain + HTTPS Setup</h3>
+<p>Configured DNS, SSL, and fixed errors for secure website hosting.</p>
+<a href="https://github.com/RajiveSharma771">🔗 GitHub</a>
+</div>
+
+<div class="card project">
+<h3>Jenkins CI/CD</h3>
+<p>Automated deployment using Jenkins pipelines for faster release cycles.</p>
+<a href="https://github.com/RajiveSharma771">🔗 GitHub</a>
+</div>
+</section>
+
+<!-- YOUTUBE -->
+<section id="youtube" class="hidden">
+<div class="card yt-box">
+<h2>🎥 CTK YouTube</h2>
+<p>Comedy | Fun | Experiments 😂🔥</p>
+
+<a href="https://www.youtube.com/@chalotrykree" target="_blank">
+🔥 Visit Channel
+</a>
+
+<br><br>
+<button class="btn" onclick="window.open('https://www.youtube.com/@chalotrykree')">▶️ Watch</button>
+<button class="btn">👍 Like</button>
+<button class="btn">🔗 Share</button>
+<button class="btn">🔔 Subscribe</button>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="hidden">
+<div class="card">
+<h2>📩 Contact</h2>
+<p>Email: your-email@example.com</p>
+</div>
+</section>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
